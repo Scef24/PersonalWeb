@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>LEAH ABELLA</h1>
+        </div>
+   
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Hi There!</h2>
+                <h1>I am Leah Abella</h1>
+                <p>Hardworking and Dedicated</p>
+               
+                <div class="social-links">
+                    <a href="https://web.facebook.com/profile.php?id=100070510783617">Facebook</a>
+                   
+                    <a href="https://www.instagram.com/leeeiabella">Instagram</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/leahNew.png" alt="Leah Abella">
+               
+            </div>
+        </section>
+
+        <h2 class="abt">About Me</h2>
+        <section id="about" class="about-section">
+            
+            <div class="about-content">
+                <div class="image-container">
+                    <img src="images/grad.jpg" alt="Leah Abella" class="about-image" id="aboutImage">
+                    <p id="clickMe">Click Me!</p>
+                </div>
+                <div class="about-details">
+                    <div class="tab-content">
+                        <h3>My Story</h3>
+                        <p>Hello! I'm Leah Abella, a passionate and dedicated individual living in Casia II Bankal, LLC. I thrive on challenges and constantly set goals for myself, so I have something to strive toward. I am always looking for an opportunity to do better and achieve greatness.</p>
+                        <p><strong>Favorite Place:</strong> The beach is my sanctuary. The soothing sound of the waves and the refreshing sea breeze provide the perfect escape from the hustle and bustle of everyday life.</p>
+                        <p><strong>Work:</strong> I am a Crew Trainer at McDonald's, where I enjoy mentoring new team members and ensuring excellent customer service.</p>
+                        <p><strong>Hobbies:</strong> In my free time, I love experimenting with new recipes, playing badminton, and watching movies. My favorite foods are seafood, especially shrimp and crab, and my favorite color is sky blue.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Personal Blog. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://web.facebook.com/profile.php?id=100070510783617">Facebook</a>
+            <a href="https://www.instagram.com/leeeiabella">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        const images = [
+            'images/grad.jpg',
+            'images/leahNew.png',
+            'images/portrait.jpg',
+            'images/leah.jpg',
+            'images/work.jpg',
+            'images/gradPic.jpg',
+            'images/hobby.jpg',
+            'images/beach.jpg',
+            'images/carBg.jpg', 
+        ];
+        let currentIndex = 0;
+
+        document.getElementById('clickMe').addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById('aboutImage').src = images[currentIndex];
+        });
+
+        document.querySelectorAll('.social-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const id = this.id.replace('-icon', '-details');
+                const detail = document.getElementById(id);
+                detail.classList.toggle('active');
+            });
+        });
+
+        var modal = document.getElementById("galleryModal");
+        var btn = document.querySelector(".button");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
